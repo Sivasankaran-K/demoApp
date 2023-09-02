@@ -1,0 +1,146 @@
+.eachCell {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparentize($color: #ffffff, $amount: 0.2);
+    border-radius: 5px;
+}
+
+.body {
+    background-image: url('../../assets/images/2048_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.componentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5% auto;
+    position: relative;
+}
+
+.topButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.tableRow {
+    display: flex;
+}
+
+.bottomButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    box-shadow: 2px 2px 5px 2px white;
+}
+
+.buttons:active {
+    background-color: white;
+    color: black
+}
+
+.gameWin,
+.gameOver,
+.gif {
+    position: absolute;
+    top: 47%;
+    height: 30%;
+    width: 30%;
+    right: 35%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px white;
+    color: white;
+    text-shadow: 2px 2px 8px #FF0000, 2px 2px 8px #0000FF, 2px 2px 8px green;
+}
+
+.newGameButton {
+    border-radius: 3px;
+    border: 1px hidden white;
+    background: linear-gradient(#28DDFE, #FB809F);
+    padding: 8px;
+    cursor: pointer;
+}
+
+.newGameButton:hover {
+    box-shadow: white 2px 2px 8px 2px;
+}
+
+.yourScoreContainer {
+    background-color: transparentize($color: #FC7498, $amount: 0.3);
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px white;
+    color: white;
+}
+
+.scoreContainer {
+    display: flex;
+    column-gap: 20px;
+}
+
+.newGameDefault {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.gameOver {
+    background-color: transparentize($color: #ff5347, $amount: 0.3);
+}
+
+.scoreHeading {
+    font-size: small;
+}
+
+.score {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.gif {
+    position: absolute;
+    top: 47%;
+    height: 30%;
+    width: 30%;
+    right: 35%;
+    background: url('https://i.gifer.com/4M57.gif');
+    background-color: transparentize($color: #16adf3, $amount: 0.3);
+}

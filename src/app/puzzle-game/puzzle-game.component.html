@@ -1,0 +1,52 @@
+<div class="body">
+    <div class="newGameDefault">
+        <button (click)="newGame()" class='newGameButton'>New Game</button>
+    </div>
+    <div class="componentContainer">
+        <div class="scoreContainer">
+            <div class="yourScoreContainer">
+                <div class="scoreHeading">Your Score</div>
+                <div class="score">{{score}}</div>
+            </div>
+            <div class="yourScoreContainer">
+                <div class="scoreHeading">Best Score</div>
+                <div class="score">{{bestScore}}</div>
+            </div>
+        </div>
+        <div class="table">
+            <div *ngFor="let arr of data; let i = index" class="tableRow">
+                <div *ngFor="let val of arr; let j = index" class="tableColumn eachCell"
+                    [style.background-color]="boxBackground[val]">
+                    {{ val ? val : '' }}
+                </div>
+            </div>
+        </div>
+        <div *ngIf='isButtonEnable' class="buttonContainer">
+            <div class="topButtonContainer">
+                <button class="buttons" (click)="handleTop()">
+                    <mat-icon>expand_less</mat-icon>
+                </button>
+            </div>
+            <div class="bottomButtonContainer">
+                <button class="buttons" (click)="handleLeft()">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+                <button class="buttons" (click)="handleBottom()">
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+                <button class="buttons" (click)="handleRight()">
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div>
+            <div *ngIf="isGameWin" class="gif"></div>
+            <div *ngIf="isGameWin" class="gameWin">You won 
+                <button (click)="newGame()" class='newGameButton'>New Game</button>
+            </div>
+        </div>
+        <div class="gameOver" *ngIf="isGameOver">Game Over
+             <button (click)="newGame()" class='newGameButton'>New Game</button>
+        </div>
+    </div>
+</div>
